@@ -1,4 +1,4 @@
-FROM alpine:3.13 as build
+FROM alpine:3.16 as build
 WORKDIR /build
 RUN apk add --no-cache gcc binutils-gold musl-dev libxml2-dev zlib-static make
 COPY Makefile *.c *.h ./
