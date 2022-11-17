@@ -1,4 +1,4 @@
-FROM alpine:3.16@sha256:b95359c2505145f16c6aa384f9cc74eeff78eb36d308ca4fd902eeeb0a0b161b as build
+FROM alpine:3.17@sha256:36a03c95c2f0c83775d500101869054b927143a8320728f0e135dc151cb8ae61 as build
 WORKDIR /build
 RUN apk add --no-cache gcc binutils-gold musl-dev libxml2-dev zlib-static make
 COPY Makefile *.c *.h ./
