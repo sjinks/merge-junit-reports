@@ -50,7 +50,7 @@ static void updateCounters(const xmlNodePtr node)
 
 static xmlDocPtr loadFile(const char* filename)
 {
-    xmlDocPtr doc = xmlReadFile(filename, NULL, 0);
+    xmlDocPtr doc = xmlReadFile(filename, NULL, XML_PARSE_NOBLANKS);
     if (doc == NULL) {
         fprintf(stderr, "Failed to parse %s\n", filename);
         return NULL;
@@ -123,7 +123,6 @@ int main(int argc, char** argv)
     atexit(&cleanup);
 
     xmlIndentTreeOutput = 1;
-    xmlKeepBlanksDefault(0);
 
     if (argc == 2) {
         xmlDocPtr result = loadFile(argv[1]);
